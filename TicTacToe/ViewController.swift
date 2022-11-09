@@ -146,11 +146,13 @@ class ViewController: UIViewController
         {
             firstTurn = Turn.Cross
             turnLabel.text = CROSS
+            turnLabel.textColor = UIColor(named: "redOrangeColor")
         }
         else if firstTurn == Turn.Cross
         {
             firstTurn = Turn.Nought
             turnLabel.text = NOUGHT
+            turnLabel.textColor = UIColor(named: "emeraldColor")
         }
         currentTurn = firstTurn
     }
@@ -174,14 +176,18 @@ class ViewController: UIViewController
             if(currentTurn == Turn.Nought)
             {
                 sender.setTitle(NOUGHT, for: .normal)
+                sender.setTitleColor(.systemGreen, for: .normal)
                 currentTurn = Turn.Cross
                 turnLabel.text = CROSS
+                turnLabel.textColor = .systemPink
             }
             else if(currentTurn == Turn.Cross)
             {
                 sender.setTitle(CROSS, for: .normal)
+                sender.setTitleColor(.systemPink, for: .normal)
                 currentTurn = Turn.Nought
                 turnLabel.text = NOUGHT
+                turnLabel.textColor = .systemGreen
             }
             sender.isEnabled = false
         }
